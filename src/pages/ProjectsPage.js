@@ -1,18 +1,15 @@
 // src/pages/ProjectsPage.js
- 
+
 import { useState, useEffect } from "react";
-import projectsData from "./../projects-data.json";
- 
-function ProjectsPage(props) {
+
+function ProjectsPage (props) {
   const [projects, setProjects] = useState([]);
- 
-  // This effect will run only once on the initial render.
-  // To do it we set the dependency array empty [].
+
   useEffect(() => {
-    setProjects(props.projects);                  // <== UPDATE
-  }, [props.projects]);                           // <== UPDATE
- 
-  
+    setProjects(props.projects);
+  }, [props.projects]);
+
+
   return (
     <div>
       <h1>Projects</h1>
@@ -27,5 +24,5 @@ function ProjectsPage(props) {
     </div>
   );
 }
- 
+
 export default ProjectsPage;
