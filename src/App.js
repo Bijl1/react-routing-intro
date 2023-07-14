@@ -8,8 +8,9 @@ import HomePageWithNavigate from "./pages/HomePageWithNavigate";
 import { Routes, Route } from "react-router-dom";
 
 import projectsData from './projects-data.json';
-
 import ProjectDetailsPage from "./pages/ProjectDetailsPage";  // <== IMPORT
+import QueryStringExample from "./pages/QueryStringExample";
+
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
       
       <Routes>
         {/* <Route  path="/" element={ <HomePage /> } /> */}
-
+ 
         <Route path="/" element={ <HomePageWithNavigate /> } />
         <Route path="/about" element={ <AboutPage /> } />
         
@@ -26,17 +27,19 @@ function App() {
           path="/projects"
           element={ <ProjectsPage projects={projectsData} /> }
         />
-        
-        {/*  ADD  */}
+ 
         <Route 
           path="/projects/:projectId" 
           element={ <ProjectDetailsPage /> } 
-        />        
-
+        />            
+        
+        {/* ADD  */}
+        <Route path="/example" element={ <QueryStringExample /> } />
+ 
         <Route path="*" element={ <ErrorPage /> } />
       </Routes>
     </div>
   );
 }
-
+ 
 export default App;
